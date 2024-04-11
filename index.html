@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beellionaire</title>
+  <link rel="stylesheet" href="dist/output.css" />
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Header Start -->
+  <header class="absolute left-0 top-0 z-10 flex w-full items-center bg-transparent">
+    <div class="container">
+      <div class="relative flex items-center justify-between">
+        <div class="px-4">
+          <a href="#home" class="block py-6 text-lg font-bold text-primary">Beellionaire.</a>
+        </div>
+
+        <div class="flex items-center px-4">
+          <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+            <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line transition duration-300 ease-in-out"></span>
+            <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+          </button>
+
+          <nav id="nav-menu"
+            class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-xl bg-white py-5 shadow-lg lg:static lg:block lg:max-w-full lg:rounded-none lg:dark:bg-transparent lg:bg-transparent lg:shadow-none dark:bg-dark dark:shadow-slate-700">
+
+            <ul class="block lg:flex">
+              <li class="group">
+                <a href="#home"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Home</a>
+              </li>
+              <li class="group">
+                <a href="#about"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">About</a>
+              </li>
+              <li class="group">
+                <a href="#portfolio"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Portfolio</a>
+              </li>
+              <li class="group">
+                <a href="#framework"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Framework</a>
+              </li>
+              <li class="group">
+                <a href="#publication"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Publication</a>
+              </li>
+              <li class="group">
+                <a href="#contact"
+                  class="mx-4 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+              </li>
+              <li class="mt-3 lg:mt-0 flex items-center pl-4">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500 dark:text-white">Light</span>
+                  <input type="checkbox" class="hidden" id="dark-toggle">
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                      </div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500 dark:text-white">Dark</span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <!-- Hero Section Start -->
+  <section id="home" class="pt-36 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-4 lg:w-1/2">
+          <h1 class="text-base font-semibold text-primary md:text-xl lg:text-3xl">
+            Hello Cuy, This is
+            <span class="block text-4xl font-bold text-dark lg:text-7xl dark:text-white">Beellionaire</span>
+          </h1>
+          <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl dark:text-white">
+            IOS Developer | <span class="text-dark dark:text-secondary">Photographer</span>
+          </h2>
+          <p class="mb-10 font-medium leading-relaxed text-secondary lg:text-xl">
+            Welcome to my Porto
+          </p>
+
+          <a href="#"
+            class="rounded-lg bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 ease-in-out hover:text-slate-700 hover:opacity-80 hover:shadow-xl">Contact
+            Me</a>
+        </div>
+
+        <div class="w-full self-end px-4 lg:w-1/2">
+          <div class="relative mt-10 lg:right-0 lg:mt-0">
+            <img src="dist/img/1.png" alt="" class="mx-auto max-w-full relative z-10" />
+            <span class="absolute -bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#f59e0b"
+                  d="M41.9,-72.2C54.6,-65.1,65.5,-54.6,70.9,-42C76.4,-29.4,76.4,-14.7,77.5,0.6C78.5,15.9,80.5,31.8,74.9,44.1C69.3,56.4,56,65.2,42.3,71.1C28.5,76.9,14.2,79.8,-1,81.6C-16.3,83.4,-32.6,84.1,-45.5,77.7C-58.3,71.3,-67.6,57.9,-74.6,43.7C-81.7,29.6,-86.5,14.8,-84.9,0.9C-83.3,-12.9,-75.2,-25.8,-66.6,-37.3C-58,-48.8,-48.9,-58.9,-37.7,-66.8C-26.5,-74.7,-13.3,-80.5,0.7,-81.6C14.6,-82.7,29.1,-79.2,41.9,-72.2Z"
+                  transform="translate(100 100)" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- About Section Start -->
+  <section id="about" class="pb-32 pt-36 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="mb-10 w-full px-4 lg:w-1/2">
+          <h4 class="mb-3 text-lg font-bold uppercase text-primary">
+            About Me
+          </h4>
+          <h2 class="mb-5 max-w-md text-3xl font-bold text-dark lg:text-4xl dark:text-white">
+            Lorem ipsum, dolor sit amet consectetur adipisicing.
+          </h2>
+          <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus
+            soluta tenetur at libero ex dolorem esse?
+          </p>
+        </div>
+
+        <div class="w-full px-4 lg:w-1/2">
+          <h3 class="mb-4 text-2xl font-bold text-dark lg:pt-10 lg:text-3xl dark:text-white">
+            My Social Media
+          </h3>
+          <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            consequuntur blanditiis nobis modi deleniti quod magni voluptatem,
+            aliquam pariatur repellendus!
+          </p>
+
+          <div class="flex items-center">
+            <!-- LinkedIn -->
+            <a href="" target="_blank" class="socmed-link">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>LinkedIn</title>
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a href="" target="_blank" class="socmed-link">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Instagram</title>
+                <path
+                  d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+              </svg>
+            </a>
+
+            <!-- Twitter -->
+            <a href="" target="_blank" class="socmed-link">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>X</title>
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+              </svg>
+            </a>
+
+            <!-- Tiktok -->
+            <a href="" target="_blank" class="socmed-link">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>TikTok</title>
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+              </svg>
+            </a>
+
+            <!-- Github -->
+            <a href="" target="_blank" class="socmed-link">
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>GitHub</title>
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Portfolio Section Start -->
+  <section id="portfolio" class="bg-slate-100 pb-16 pt-36 dark:bg-slate-700">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-2 text-lg font-bold uppercase text-primary">
+            Portfolio
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark lg:text-5xl dark:text-white">
+            New Project
+          </h2>
+          <p class="font-medium text-secondary lg:text-lg  dark:text-white">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
+            ut!
+          </p>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img src="dist/img/portfolio/1.jpg" alt="1" width="w-full" />
+          </div>
+          <h3 class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white">
+            Mobile App
+          </h3>
+          <p class="text-base font-medium text-secondary dark:text-slate-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
+            explicabo aut? Facere nemo exercitationem eius!
+          </p>
+        </div>
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img src="dist/img/portfolio/2.jpg" alt="1" width="w-full" />
+          </div>
+          <h3 class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white">
+            Mobile App
+          </h3>
+          <p class="text-base font-medium text-secondary dark:text-slate-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
+            explicabo aut? Facere nemo exercitationem eius!
+          </p>
+        </div>
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img src="dist/img/portfolio/4.jpg" alt="1" width="w-full" />
+          </div>
+          <h3 class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white">
+            Mobile App
+          </h3>
+          <p class="text-base font-medium text-secondary dark:text-slate-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
+            explicabo aut? Facere nemo exercitationem eius!
+          </p>
+        </div>
+        <div class="mb-12 p-4 md:w-1/2">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img src="dist/img/portfolio/3.jpg" alt="1" width="w-full" />
+          </div>
+          <h3 class="mb-3 mt-5 text-xl font-semibold text-dark dark:text-white">
+            Mobile App
+          </h3>
+          <p class="text-base font-medium text-secondary dark:text-slate-400">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex,
+            explicabo aut? Facere nemo exercitationem eius!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Portofolio Section End -->
+
+  <!-- Framework Section Start -->
+  <section id="framework" class="bg-slate-700 pb-32 pt-36 dark:bg-slate-300">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 text-center">
+          <h4 class="mb-2 text-lg font-bold uppercase text-slate-300 dark:text-primary">
+            Framework
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-white lg:text-5xl dark:text-dark">
+            My Framework Tools
+          </h2>
+          <p class="font-medium text-secondary lg:text-lg">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
+            ut!
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full px-4">
+        <div class="flex w-full flex-wrap items-center justify-center">
+          <a href="#"
+            class="mx-4 max-w-[55px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/html.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[70px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/css.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[68px] py-4 opacity-50 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/js.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[150px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/node.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[90px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/react.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[90px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/sql.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[400px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/mongo.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[80px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/py.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[150px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/express.png" alt="google" />
+          </a>
+          <a href="#"
+            class="mx-4 max-w-[100px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 xl:mx-8 lg:mx-6">
+            <img src="dist/img/clients/tailwind.png" alt="google" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Framework Section End -->
+
+  <!-- Publication Section Start -->
+  <section id="publication" class="bg-slate-200 pb-32 pt-36 dark:bg-dark">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 max-w-xl text-center">
+          <h4 class="mb-3 text-lg font-bold uppercase text-primary">
+            Publication
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark lg:text-5xl dark:text-white">
+            My Publication
+          </h2>
+          <p class="font-medium text-secondary lg:text-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            optio neque sed quisquam repellendus beatae!
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img loading="lazy" src="https://source.unsplash.com/360x200?programming" alt=""
+                class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img src="https://source.unsplash.com/360x200?gadget" alt="" class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img src="https://source.unsplash.com/360x200?technology" alt="" class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img src="https://source.unsplash.com/360x200?healthy" alt="" class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img src="https://source.unsplash.com/360x200?sport" alt="" class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full px-4 md:w-1/2 lg:w-1/3">
+          <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-xl dark:bg-slate-900">
+            <a href="#"><img src="https://source.unsplash.com/360x200?company" alt="" class="w-full" /></a>
+            <div class="px-8 py-6">
+              <h3>
+                <a href="#"
+                  class="mb-3 mt-5 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">Lorem
+                  ipsum dolor</a>
+              </h3>
+              <p class="mb-5 text-base font-medium text-secondary">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                sequi, quis repellendus tempore provident pariatur.
+              </p>
+              <a href="#"
+                class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-xl transition duration-300 ease-in-out hover:opacity-80">Read
+                More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Publication Section End -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="pb-32 pt-36 dark:bg-slate-700">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-16 text-center">
+          <h4 class="mb-2 text-lg font-bold uppercase text-primary">
+            Contact
+          </h4>
+          <h2 class="mb-4 text-3xl font-bold text-dark lg:text-5xl dark:text-white">
+            Contact Me
+          </h2>
+          <p class="font-medium text-secondary lg:text-lg">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
+            ut!
+          </p>
+        </div>
+      </div>
+
+      <form action="" method="post">
+        <div class="mx-auto w-full md:w-2/3">
+          <div class="mb-8 w-full px-4">
+            <label for="name" class="mb-3 block text-base font-bold text-primary">Name</label>
+            <input type="text" id="name"
+              class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-8 w-full px-4">
+            <label for="email" class="mb-3 block text-base font-bold text-primary">Email</label>
+            <input type="email" id="email"
+              class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+          </div>
+          <div class="mb-8 w-full px-4">
+            <label for="message" class="mb-3 block text-base font-bold text-primary">Message</label>
+            <textarea name="message" id="message"
+              class="h-32 w-full resize-none rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+          </div>
+          <div class="w-full px-4">
+            <button
+              class="w-full rounded-lg bg-primary px-8 py-3 text-base font-semibold text-white transition duration-300 hover:opacity-80 hover:shadow-xl">
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Start -->
+  <footer class="bg-dark pb-12 pt-24">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="mb-12 w-full px-4 font-medium text-slate-200 md:w-1/3">
+          <h2 class="mb-5 text-4xl font-bold text-white">
+            Beellionaire.corp
+          </h2>
+          <h3 class="mb-2 text-2xl font-bold">Address</h3>
+          <p>nabielabiyuu@gmail.com</p>
+          <p>Karanganyar</p>
+          <p>Central Java</p>
+        </div>
+
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">Category</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#" class="mb-3 inline-block text-base hover:text-primary">Programming</a>
+            </li>
+            <li>
+              <a href="#" class="mb-3 inline-block text-base hover:text-primary">Healthy Life</a>
+            </li>
+            <li>
+              <a href="#" class="mb-3 inline-block text-base hover:text-primary">Gym Tips</a>
+            </li>
+          </ul>
+        </div>
+        <div class="mb-12 w-full px-4 md:w-1/3">
+          <h3 class="mb-5 text-xl font-semibold text-white">Link</h3>
+          <ul class="text-slate-300">
+            <li>
+              <a href="#home" class="mb-3 inline-block text-base hover:text-primary">Home</a>
+            </li>
+            <li>
+              <a href="#about" class="mb-3 inline-block text-base hover:text-primary">About</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="mb-3 inline-block text-base hover:text-primary">Portofolio</a>
+            </li>
+            <li>
+              <a href="#framework" class="mb-3 inline-block text-base hover:text-primary">Framework</a>
+            </li>
+            <li>
+              <a href="#publication" class="mb-3 inline-block text-base hover:text-primary">Publication</a>
+            </li>
+            <li>
+              <a href="#contact" class="mb-3 inline-block text-base hover:text-primary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full border-t border-slate-400 pt-10">
+        <div class="mb-5 flex items-center justify-center">
+          <!-- LinkedIn -->
+          <a href="" target="_blank" class="socmed-link">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>LinkedIn</title>
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="" target="_blank" class="socmed-link">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Instagram</title>
+              <path
+                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+            </svg>
+          </a>
+
+          <!-- Twitter -->
+          <a href="" target="_blank" class="socmed-link">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>X</title>
+              <path
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+            </svg>
+          </a>
+
+          <!-- Tiktok -->
+          <a href="" target="_blank" class="socmed-link">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>TikTok</title>
+              <path
+                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+            </svg>
+          </a>
+
+          <!-- Github -->
+          <a href="" target="_blank" class="socmed-link">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>GitHub</title>
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </a>
+        </div>
+        <p class="text-center text-xs font-medium text-slate-500">
+          Copyright by Beel 2024
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Back To Top Start -->
+  <a href="#home" id="to-top"
+    class="w-14 h-14 bg-primary bottom-4 hover:animate-pulse hidden justify-center items-center right-4 fixed z-[999] rounded-full p-4">
+    <svg width="256px" height="256px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+        <g fill="#ffffff">
+          <path
+            d="M2.5 2.5a.75.75 0 010-1.5H13a.75.75 0 010 1.5H2.5zM2.985 9.795a.75.75 0 001.06-.03L7 6.636v7.614a.75.75 0 001.5 0V6.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 00.03 1.06z">
+          </path>
+        </g>
+      </g>
+    </svg>
+  </a>
+  <!-- Back To Top End -->
+
+
+
+
+  <script src="dist/js/script.js"></script>
+</body>
+
+</html>
